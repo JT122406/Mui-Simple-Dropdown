@@ -1,0 +1,28 @@
+{
+  "name": "mui-dropdown",
+  "version": "0.0.1",
+  "packageManager": "pnpm@10.26.2",
+  "peerDependencies": {
+    "@mui/material": "^7.3.6",
+    "react": "^19.2.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.9.3",
+    "@types/react": "^19.2.7",
+    "typedoc": "^0.28.15",
+    "eslint": "^9.39.2",
+    "babel-plugin-react-compiler": "^1.0.0",
+    "typescript-eslint": "^8.50.1",
+    "eslint-plugin-react": "^7.37.5",
+    "eslint-plugin-react-hooks": "^7.0.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "files": [
+    "dist/"
+  ]
+}
