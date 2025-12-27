@@ -1,5 +1,5 @@
 import React from "react";
-import {MenuItem, Select} from "@mui/material";
+import {MenuItem, Select, SelectChangeEvent} from "@mui/material";
 
 /**
  * Element representing an item in a dropdown
@@ -16,23 +16,26 @@ export interface DropdownItem<T extends string | number> {
 /**
  * Props for the Dropdown component
  * @param items - The items to display in the dropdown
+ * @param value - The currently selected item
  * @param onChange - Callback function to invoke when an item is selected
  */
 export interface DropdownProps<T extends string | number> {
     items: DropdownItem<T>[];
+    value?: T;
     onChange: (value: T) => void;
 }
 
 /**
  * Dropdown component
  * @param items - The items to display in the dropdown
+ * @param value - The currently selected item
  * @param onChange - Callback function to invoke when an item is selected
  * @param selectProps - Additional props to pass to the underlying Select component
  * @constructor
  */
-export function Dropdown<T extends string | number>({items, onChange, ...selectProps}: DropdownProps<T>): React.JSX.Element {
+export function Dropdown<T extends string | number>({items, value, onChange, ...selectProps}: DropdownProps<T>): React.JSX.Element {
     return (
-        <Select {...selectProps}>
+        <Select {...selectProps} value={value} onChange={(e: SelectChangeEvent<T>): void => onChange(e.target.value as T)}>
             {items.map((item: DropdownItem<T>): React.JSX.Element =>
                 <MenuItem key={item.key ?? item.value} value={item.value}>
                     {item.label}
