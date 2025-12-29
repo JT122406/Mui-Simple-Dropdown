@@ -1,7 +1,12 @@
 {
-  "name": "mui-dropdown",
+  "name": "@jt122406/mui-dropdown",
   "version": "0.0.1",
+  "description": "Basic dropdown component for MUI",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "packageManager": "pnpm@10.26.2",
+  "author": "Joseph T. McQuigg",
+  "repository": "https://github.com/JT122406/Mui-Simple-Dropdown",
   "peerDependencies": {
     "@mui/material": "^7.3.6",
     "react": "^19.2.3"
@@ -19,6 +24,9 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "tsc"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   },
   "files": [
     "dist/"
