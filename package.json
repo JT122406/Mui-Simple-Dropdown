@@ -1,6 +1,6 @@
 {
   "name": "@jt122406/mui-dropdown",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "Basic dropdown component for MUI",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

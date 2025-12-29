@@ -17,7 +17,7 @@ export interface DropdownItem<T extends string | number> {
  * Props for the Dropdown component
  * @param items - The items to display in the dropdown
  */
-export interface DropdownProps<T extends string | number> extends Omit<SelectProps<T>, "value"> {
+export interface DropdownProps<T extends string | number> extends Omit<SelectProps<T>, "children"> {
     items: DropdownItem<T>[];
 }
 
