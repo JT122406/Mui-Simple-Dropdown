@@ -6,6 +6,7 @@ import {MenuItem, Select, SelectProps} from "@mui/material";
  * @param label - The label to display for the dropdown item
  * @param value - The value associated with the dropdown item
  * @param key - Optional key for the dropdown item, defaults to value if not provided
+ * @param disabled - Whether the dropdown item is disabled, defaults to false
  */
 export interface DropdownItem<T extends string | number> {
     label: string;
