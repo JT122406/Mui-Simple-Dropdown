@@ -1,10 +1,10 @@
 {
   "name": "@jt122406/mui-dropdown",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "Basic dropdown component for MUI",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "packageManager": "pnpm@10.26.2",
+  "packageManager": "pnpm@10.28.0",
   "author": "Joseph T. McQuigg",
   "repository": "https://github.com/JT122406/Mui-Simple-Dropdown",
   "peerDependencies": {
@@ -12,14 +12,14 @@
     "react": "^19.2.3"
   },
   "devDependencies": {
-    "typescript": "^5.9.3",
-    "@types/react": "^19.2.7",
-    "typedoc": "^0.28.15",
-    "eslint": "^9.39.2",
+    "@types/react": "^19.2.8",
     "babel-plugin-react-compiler": "^1.0.0",
-    "typescript-eslint": "^8.50.1",
+    "eslint": "^9.39.2",
     "eslint-plugin-react": "^7.37.5",
-    "eslint-plugin-react-hooks": "^7.0.1"
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "typedoc": "^0.28.16",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.53.0"
   },
   "scripts": {
     "start": "react-scripts start",

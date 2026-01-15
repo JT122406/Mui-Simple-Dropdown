@@ -11,6 +11,7 @@ export interface DropdownItem<T extends string | number> {
     label: string;
     value: T;
     key?: string;
+    disabled?: boolean;
 }
 
 /**
@@ -31,7 +32,7 @@ export function Dropdown<T extends string | number>({items, ...selectProps}: Dro
     return (
         <Select {...selectProps}>
             {items.map((item: DropdownItem<T>): React.JSX.Element =>
-                <MenuItem key={item.key ?? item.value} value={item.value}>
+                <MenuItem key={item.key ?? item.value} value={item.value} disabled={item.disabled}>
                     {item.label}
                 </MenuItem>
             )}
