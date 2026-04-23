@@ -1,18 +1,16 @@
 import React from "react";
-import {MenuItem, Select, SelectProps} from "@mui/material";
+import {MenuItem, MenuItemProps, Select, SelectProps} from "@mui/material";
 
 /**
  * Element representing an item in a dropdown
  * @param label - The label to display for the dropdown item
  * @param value - The value associated with the dropdown item
  * @param key - Optional key for the dropdown item, defaults to value if not provided
- * @param disabled - Whether the dropdown item is disabled, defaults to false
  */
-export interface DropdownItem<T extends string | number> {
+export interface DropdownItem<T extends string | number> extends Omit<MenuItemProps, "value" | "key" | "children">{
     label: string;
     value: T;
     key?: string;
-    disabled?: boolean;
 }
 
 /**
@@ -32,11 +30,11 @@ export interface DropdownProps<T extends string | number> extends Omit<SelectPro
 export function Dropdown<T extends string | number>({items, ...selectProps}: DropdownProps<T>): React.JSX.Element {
     return (
         <Select {...selectProps}>
-            {items.map((item: DropdownItem<T>): React.JSX.Element =>
-                <MenuItem key={item.key ?? item.value} value={item.value} disabled={item.disabled}>
-                    {item.label}
+            {items.map(({ label, value, key, ...menuItemProps }: DropdownItem<T>): React.JSX.Element => (
+                <MenuItem key={key ?? value} value={value} {...menuItemProps}>
+                    {label}
                 </MenuItem>
-            )}
+            ))}
         </Select>
     )
 }
