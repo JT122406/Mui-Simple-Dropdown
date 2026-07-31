@@ -4,7 +4,7 @@
   "description": "Basic dropdown component for MUI",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "packageManager": "pnpm@10.33.1",
+  "packageManager": "pnpm@11.18.0",
   "author": "Joseph T. McQuigg",
   "repository": "https://github.com/JT122406/Mui-Simple-Dropdown",
   "peerDependencies": {
@@ -12,17 +12,18 @@
     "react": "^19.2.5"
   },
   "devDependencies": {
-    "@types/react": "^19.2.14",
+    "@types/react": "^19.2.18",
     "babel-plugin-react-compiler": "^1.0.0",
-    "eslint": "^10.2.1",
+    "eslint": "^10.8.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^7.1.1",
-    "typedoc": "^0.28.19",
+    "typedoc": "^0.28.20",
     "typescript": "^6.0.3",
-    "typescript-eslint": "^8.59.0"
+    "typescript-eslint": "^8.65.0"
   },
   "scripts": {
-    "build": "tsc"
+    "build": "tsc",
+    "test-app": "cd test-app && pnpm dev"
   },
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"

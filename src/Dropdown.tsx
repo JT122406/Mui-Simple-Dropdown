@@ -16,20 +16,33 @@ export interface DropdownItem<T extends string | number> extends Omit<MenuItemPr
 /**
  * Props for the Dropdown component
  * @param items - The items to display in the dropdown
+ * @param visibleItemsCount - The number of items to display before scrolling
  */
 export interface DropdownProps<T extends string | number> extends Omit<SelectProps<T>, "children"> {
     items: DropdownItem<T>[];
+    visibleItemsCount?: number;
 }
 
 /**
  * Dropdown component
  * @param items - The items to display in the dropdown
+ * @param visibleItemsCount - The number of items to display before scrolling
  * @param selectProps - Additional props to pass to the underlying Select component
  * @constructor
  */
-export function Dropdown<T extends string | number>({items, ...selectProps}: DropdownProps<T>): React.JSX.Element {
+export function Dropdown<T extends string | number>({items, visibleItemsCount, ...selectProps}: DropdownProps<T>): React.JSX.Element {
+    const MenuProps: DropdownProps<T>["MenuProps"] = visibleItemsCount ? {
+        slotProps: {
+            paper: {
+                style: {
+                    maxHeight: 48 * visibleItemsCount + 8,
+                },
+            },
+        },
+    } : undefined;
+
     return (
-        <Select {...selectProps}>
+        <Select {...selectProps} MenuProps={MenuProps ?? selectProps.MenuProps}>
             {items.map(({ label, value, key, ...menuItemProps }: DropdownItem<T>): React.JSX.Element => (
                 <MenuItem key={key ?? value} value={value} {...menuItemProps}>
                     {label}
