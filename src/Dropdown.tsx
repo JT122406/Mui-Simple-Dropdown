@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Key} from "react";
 import {MenuItem, MenuItemProps, Select, SelectProps} from "@mui/material";
 
 /**
@@ -10,7 +10,7 @@ import {MenuItem, MenuItemProps, Select, SelectProps} from "@mui/material";
 export interface DropdownItem<T extends string | number> extends Omit<MenuItemProps, "value" | "key" | "children">{
     label: string;
     value: T;
-    key?: string;
+    key?: Key;
 }
 
 /**
